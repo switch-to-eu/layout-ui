@@ -1,0 +1,24 @@
+/**
+ * Theme overrides for different projects
+ * Each project can define its own theme by overriding CSS custom properties
+ */
+
+/* Plotty Theme - Purple/Blue gradients */
+.theme-plotty {
+  --primary: 251 91% 95%;
+  --primary-foreground: 260 10% 13%;
+  --accent: 265 89% 78%;
+  --accent-foreground: 260 10% 13%;
+  --ring: 265 89% 78%;
+}
+
+/* Default neutral theme */
+.theme-default {
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 84% 4.9%;
+  --ring: 222.2 84% 4.9%;
+}
+
+/* Additional theme variants can be added here */
