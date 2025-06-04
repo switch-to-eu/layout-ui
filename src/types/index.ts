@@ -12,4 +12,12 @@ export interface BaseComponentProps {
 }
 
 // Re-export theme types
-export type { ThemeConfig } from "../lib/theme";
+export type {
+    ThemeConfig,
+    ColorMode,
+    ThemeContextValue,
+    CSSVariableMap,
+    ThemeProperty,
+    ThemeValue,
+    PartialThemeConfig
+} from "./theme";

@@ -1,24 +1,27 @@
 /**
- * Theme overrides for different projects
- * Each project can define its own theme by overriding CSS custom properties
+ * Generic theme utilities
+ * Projects should create their own theme overrides in their own CSS files
+ *
+ * Example usage in project CSS:
+ *
+ * :root {
+ *   --primary: your-custom-primary-color;
+ *   --accent: your-custom-accent-color;
+ * }
+ *
+ * .dark {
+ *   --primary: your-custom-dark-primary-color;
+ *   --accent: your-custom-dark-accent-color;
+ * }
  */
 
-/* Plotty Theme - Purple/Blue gradients */
-.theme-plotty {
-  --primary: 251 91% 95%;
-  --primary-foreground: 260 10% 13%;
-  --accent: 265 89% 78%;
-  --accent-foreground: 260 10% 13%;
-  --ring: 265 89% 78%;
+/* Example of how projects can override themes */
+/*
+.your-project-theme {
+  --primary: 220 100% 50%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 200 100% 60%;
+  --accent-foreground: 0 0% 100%;
+  --ring: 220 100% 50%;
 }
-
-/* Default neutral theme */
-.theme-default {
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
-  --accent: 210 40% 96%;
-  --accent-foreground: 222.2 84% 4.9%;
-  --ring: 222.2 84% 4.9%;
-}
-
-/* Additional theme variants can be added here */
+*/

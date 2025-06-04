@@ -3,5 +3,10 @@
 // export { FormTextarea } from "./FormTextarea";
 // etc.
 
-// Temporary export to make this a valid module
-export { };
+export { FormInput } from "./FormInput";
+export type { FormInputProps } from "./FormInput";
+
+export { FormTextarea } from "./FormTextarea";
+export type { FormTextareaProps } from "./FormTextarea";
+
+export { isFieldRequired } from "./FormUtils";

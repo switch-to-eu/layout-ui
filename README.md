@@ -66,15 +66,64 @@ src/
 
 ## Theming
 
-The library supports custom themes through CSS custom properties:
+The library provides a base theme system that projects can customize by overriding CSS custom properties.
+
+### Basic Theme Customization
+
+In your project's CSS file:
 
 ```css
-.my-theme {
+/* Import the base UI library styles */
+@import "@switch-to-eu/layout-ui/styles";
+
+/* Override theme variables in your project */
+:root {
+  /* Customize primary colors */
   --primary: 220 100% 50%;
   --primary-foreground: 0 0% 100%;
+  --accent: 200 100% 60%;
+  --accent-foreground: 0 0% 100%;
+
+  /* Adjust border radius */
   --radius: 0.75rem;
 }
+
+/* Dark mode overrides */
+.dark {
+  --primary: 200 100% 70%;
+  --accent: 180 100% 80%;
+}
 ```
+
+### Using Theme Utilities
+
+```tsx
+import { applyTheme, setColorMode, getSystemColorMode } from "@switch-to-eu/layout-ui";
+
+// Apply custom theme values
+applyTheme({
+  primary: "220 100% 50%",
+  accent: "200 100% 60%"
+});
+
+// Set color mode
+setColorMode("dark");
+
+// Get system preference
+const mode = getSystemColorMode();
+```
+
+### Available Theme Properties
+
+- `primary`, `primary-foreground`
+- `secondary`, `secondary-foreground`
+- `accent`, `accent-foreground`
+- `background`, `foreground`
+- `card`, `card-foreground`
+- `muted`, `muted-foreground`
+- `destructive`, `destructive-foreground`
+- `border`, `input`, `ring`
+- `radius`
 
 ## Contributing
 
