@@ -10,33 +10,49 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:ring-primary/20 dark:focus-visible:ring-primary/40",
-        destructive:
-          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
-        outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+          "gradient-purple-blue text-white shadow-xs  hover:shadow-lg transition-all",
+        // Solid color variants
+        primary:
+          "bg-primary text-white shadow-xs hover:opacity-90 focus-visible:ring-primary/20",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-        ghost:
-          "hover:bg-accent hover:text-accent-foreground",
-        link:
-          "text-primary underline-offset-4 hover:underline",
+          "bg-secondary text-white shadow-xs hover:opacity-90 focus-visible:ring-secondary/20",
+        tertiary:
+          "bg-tertiary text-white shadow-xs hover:opacity-90 focus-visible:ring-tertiary/20",
+        quaternary:
+          "bg-quaternary text-white shadow-xs hover:opacity-90 focus-visible:ring-quaternary/20",
+        // Gradient variants
+        "gradient-primary":
+          "gradient-primary text-white shadow-xs hover:opacity-90 hover:shadow-lg transition-all",
+        "gradient-secondary":
+          "gradient-secondary text-white shadow-xs hover:opacity-90  hover:shadow-lg transition-all",
+        "gradient-tertiary":
+          "gradient-tertiary text-white shadow-xs hover:opacity-90 hover:shadow-lg transition-all",
+        "gradient-quaternary":
+          "gradient-quaternary text-white shadow-xs hover:opacity-90 hover:shadow-lg transition-all",
+        // Status variants - solid
         success:
-          "bg-green-600 text-white shadow-sm hover:bg-green-700 focus-visible:ring-green-600/20 border border-green-600 hover:border-green-700",
+          "bg-success text-white shadow-xs hover:opacity-90 focus-visible:ring-success/20",
         warning:
-          "bg-orange-600 text-white shadow-sm hover:bg-orange-700 focus-visible:ring-orange-600/20 border border-orange-600 hover:border-orange-700",
-        danger:
-          "bg-red-600 text-white shadow-sm hover:bg-red-700 focus-visible:ring-red-600/20 border border-red-600 hover:border-red-700",
+          "bg-warning text-white shadow-xs hover:opacity-90 focus-visible:ring-warning/20",
+        destructive:
+          "bg-destructive text-white shadow-xs hover:opacity-90 focus-visible:ring-destructive/20",
+        // Utility variants
+        neutral:
+          "border border-primary bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+        ghost:
+          "shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+        link:
+          "underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3 text-xs",
-        lg: "h-10 rounded-md px-8",
-        icon: "h-9 w-9",
+        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        icon: "size-9",
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "gradient-primary",
       size: "default",
     },
   }

@@ -54,8 +54,6 @@ export {
     DialogDescription,
 } from "./Dialog";
 
-export { Calendar } from "./Calendar";
-export type { CalendarProps } from "./Calendar";
 
 // Composite Components
 export { SectionCard, SectionHeader, SectionContent } from "./SectionCard";

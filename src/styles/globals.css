@@ -1,60 +1,305 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-  }
+@theme reference {
+  --color-background: 0 0% 100%;
+  --color-foreground: 222.2 84% 4.9%;
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 222.2 84% 4.9%;
+  --color-popover: 0 0% 100%;
+  --color-popover-foreground: 222.2 84% 4.9%;
+  --color-primary: 222.2 47.4% 11.2%;
+  --color-primary-foreground: 210 40% 98%;
+  --color-secondary: 210 40% 96%;
+  --color-secondary-foreground: 222.2 84% 4.9%;
+  --color-muted: 210 40% 96%;
+  --color-muted-foreground: 215.4 16.3% 46.9%;
+  --color-accent: 210 40% 96%;
+  --color-accent-foreground: 222.2 84% 4.9%;
+  --color-destructive: 0 84.2% 60.2%;
+  --color-destructive-foreground: 210 40% 98%;
+  --color-border: 220 13% 91%;
+  --color-input: 220 13% 91%;
+  --color-ring: 222.2 84% 4.9%;
+  --radius: 0.5rem;
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+  /* Custom Color Variables */
+  --color-purple-600: 262.1 83.3% 57.8%;
+  --color-purple-500: 262.1 83.3% 67.8%;
+  --color-blue-600: 217.2 91.2% 59.8%;
+  --color-blue-500: 217.2 91.2% 69.8%;
+  --color-orange-600: 20.5 90.2% 48.2%;
+  --color-orange-500: 20.5 90.2% 58.2%;
+  --color-red-600: 0 84.2% 60.2%;
+  --color-red-500: 0 84.2% 70.2%;
+  --color-green-600: 142.1 76.2% 36.3%;
+  --color-green-500: 142.1 76.2% 46.3%;
+  --color-yellow-600: 45.4 93.4% 47.5%;
+  --color-yellow-500: 45.4 93.4% 57.5%;
+  --color-pink-600: 326.8 78% 66%;
+  --color-pink-500: 326.8 78% 76%;
+  --color-gray-200: 220 13% 91%;
+  --color-gray-100: 220 14.3% 95.9%;
+  --color-gray-50: 220 14.3% 97.9%;
+  --color-white: 0 0% 100%;
+}
+
+:root {
+  --color-background: 0 0% 100%;
+  --color-foreground: 222.2 84% 4.9%;
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 222.2 84% 4.9%;
+  --color-popover: 0 0% 100%;
+  --color-popover-foreground: 222.2 84% 4.9%;
+  --color-primary: 222.2 47.4% 11.2%;
+  --color-primary-foreground: 210 40% 98%;
+  --color-secondary: 210 40% 96%;
+  --color-secondary-foreground: 222.2 84% 4.9%;
+  --color-muted: 210 40% 96%;
+  --color-muted-foreground: 215.4 16.3% 46.9%;
+  --color-accent: 210 40% 96%;
+  --color-accent-foreground: 222.2 84% 4.9%;
+  --color-destructive: 0 84.2% 60.2%;
+  --color-destructive-foreground: 210 40% 98%;
+  --color-border: 220 13% 91%;
+  --color-input: 220 13% 91%;
+  --color-ring: 222.2 84% 4.9%;
+  --radius: 0.5rem;
+
+  /* Brand Color Variables - Easily customizable per theme/project */
+  --color-brand-primary: 262.1 83.3% 57.8%;
+  /* Default: Purple */
+  --color-brand-secondary: 217.2 91.2% 59.8%;
+  /* Default: Blue */
+  --color-brand-tertiary: 142.1 76.2% 36.3%;
+  /* Default: Green */
+  --color-brand-quaternary: 20.5 90.2% 48.2%;
+  /* Default: Orange */
+
+  /* Semantic Color Variables - Fixed colors for universal meaning */
+  --color-success: 142.1 76.2% 36.3%;
+  /* Always Green */
+  --color-warning: 45.4 93.4% 47.5%;
+  /* Always Orange/Yellow */
+  --color-error: 0 84.2% 60.2%;
+  --color-error-end: 0 74.2% 40.2%;
+  /* Always Red */
+  --color-info: var(--color-brand-secondary);
+  /* Can use brand color */
+
+  /* Neutral Colors */
+  --color-gray-200: #E5E7EB;
+  --color-gray-100: 220 14.3% 95.9%;
+  --color-gray-50: 220 14.3% 97.9%;
+  --color-white: 0 0% 100%;
+
+  /* Gradient Variables */
+  --gradient-primary-start: var(--color-brand-primary);
+  --gradient-primary-end: var(--color-brand-secondary);
+  --gradient-secondary-start: var(--color-warning);
+  --gradient-secondary-end: var(--color-error);
+  --gradient-tertiary-start: var(--color-success);
+  --gradient-tertiary-end: var(--color-brand-secondary);
+  --gradient-quaternary-start: var(--color-success);
+  --gradient-quaternary-end: var(--color-warning);
+  --gradient-quinary-start: 326.8 78% 66%;
+  --gradient-quinary-end: var(--color-brand-primary);
+
+  /* Background Gradient Variables */
+  --gradient-bg-primary-start: var(--color-brand-primary);
+  --gradient-bg-primary-end: var(--color-brand-secondary);
+  --gradient-bg-secondary-start: var(--color-white);
+  --gradient-bg-secondary-end: var(--color-warning);
+  --gradient-bg-tertiary-start: var(--color-white);
+  --gradient-bg-tertiary-end: var(--color-success);
+  --gradient-bg-quaternary-start: var(--color-white);
+  --gradient-bg-quaternary-end: var(--color-warning);
+
+  /* Shadow Variables */
+  --shadow-color-primary: var(--color-brand-primary);
+  --shadow-color-secondary: var(--color-gray-200);
+}
+
+
+body {
+  background-color: hsl(var(--color-background));
+  color: hsl(var(--color-foreground));
+  border-color: hsl(var(--color-gray-200));
+}
+
+.text-white {
+  color: hsl(var(--color-white));
+}
+
+.text-primary {
+  color: hsl(var(--color-brand-primary));
+}
+
+
+/* Background Utilities */
+.bg-primary {
+  background-color: hsl(var(--color-brand-primary));
+}
+
+.bg-secondary {
+  background-color: hsl(var(--color-brand-secondary));
+}
+
+.bg-tertiary {
+  background-color: hsl(var(--color-brand-tertiary));
+}
+
+.bg-quaternary {
+  background-color: hsl(var(--color-brand-quaternary));
+}
+
+.bg-destructive {
+  background-color: hsl(var(--color-error));
+}
+
+.bg-success {
+  background-color: hsl(var(--color-success));
+}
+
+.bg-warning {
+  background-color: hsl(var(--color-warning));
+}
+
+.bg-background {
+  background-color: hsl(var(--color-background));
+}
+
+.bg-foreground {
+  background-color: hsl(var(--color-foreground));
+}
+
+
+/* Semantic Gradient Utilities */
+.gradient-primary {
+  background: linear-gradient(to right, hsl(var(--gradient-primary-start)), hsl(var(--gradient-primary-end)));
+}
+
+.gradient-secondary {
+  background: linear-gradient(to right, hsl(var(--gradient-secondary-start)), hsl(var(--gradient-secondary-end)));
+}
+
+.gradient-tertiary {
+  background: linear-gradient(to right, hsl(var(--gradient-tertiary-start)), hsl(var(--gradient-tertiary-end)));
+}
+
+.gradient-quaternary {
+  background: linear-gradient(to right, hsl(var(--gradient-quaternary-start)), hsl(var(--gradient-quaternary-end)));
+}
+
+.gradient-quinary {
+  background: linear-gradient(to right, hsl(var(--gradient-quinary-start)), hsl(var(--gradient-quinary-end)));
+}
+
+.gradient-success {
+  background: linear-gradient(to right, hsl(var(--color-success)), hsl(var(--color-success-end)));
+}
+
+.gradient-warning {
+  background: linear-gradient(to right, hsl(var(--color-warning)), hsl(var(--color-warning-end)));
+}
+
+.gradient-error {
+  background: linear-gradient(to right, hsl(var(--color-error)), hsl(var(--color-error-end)));
+}
+
+.gradient-bg-primary {
+  background: linear-gradient(to bottom right,
+      hsl(var(--gradient-bg-primary-start) / 0.1),
+      hsl(var(--gradient-bg-primary-end) / 0.1));
+}
+
+.gradient-bg-secondary {
+  background: linear-gradient(to bottom right,
+      hsl(var(--gradient-bg-secondary-start)),
+      hsl(var(--gradient-bg-secondary-end) / 0.1));
+}
+
+.gradient-bg-tertiary {
+  background: linear-gradient(to bottom right,
+      hsl(var(--gradient-bg-tertiary-start)),
+      hsl(var(--gradient-bg-tertiary-end) / 0.1));
+}
+
+.gradient-bg-quaternary {
+  background: linear-gradient(to bottom right,
+      hsl(var(--gradient-bg-quaternary-start)),
+      hsl(var(--gradient-bg-quaternary-end) / 0.1));
+}
+
+.gradient-bg-quaternary {
+  background: linear-gradient(to bottom right,
+      hsl(var(--gradient-bg-quaternary-start)),
+      hsl(var(--gradient-bg-quaternary-end) / 0.1));
+}
+
+.gradient-bg-destructive {
+  background: linear-gradient(to bottom right,
+      hsl(var(--color-error) / 0.2),
+      hsl(var(--color-error-end) / 0.05));
+}
+
+.gradient-bg-success {
+  background: linear-gradient(to bottom right,
+      hsl(var(--color-success) / 0.2),
+      hsl(var(--color-success-end) / 0.05));
+}
+
+/* Border Utilities */
+.border-primary,
+.border-input {
+  border-color: var(--color-gray-200);
+}
+
+/* Shadow Utilities */
+.shadow-card {
+  box-shadow: 0 10px 15px -3px hsl(var(--shadow-color-primary) / 0.1),
+    0 4px 6px -4px hsl(var(--shadow-color-primary) / 0.1);
+}
+
+.shadow-card-hover {
+  box-shadow: 0 20px 25px -5px hsl(var(--shadow-color-primary) / 0.15),
+    0 8px 10px -6px hsl(var(--shadow-color-primary) / 0.1);
+}
+
+.shadow-xs {
+  box-shadow: 0 1px 2px 0 hsl(var(--color-gray-200) / 0.5);
+}
+
+
+/* Container Queries Support */
+@supports (container-type: inline-size) {
+  .\@container\/card-header {
+    container-type: inline-size;
+    container-name: card-header;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+/*
+  Theme Customization Example:
+  Override these 4 variables to completely rebrand your application
+
+  .theme-ocean {
+    --color-brand-primary: 200 100% 40%;    // Deep Blue
+    --color-brand-secondary: 180 100% 50%;  // Cyan
+    --color-brand-tertiary: 160 100% 35%;   // Teal
+    --color-brand-quaternary: 220 100% 60%; // Light Blue
   }
 
-  body {
-    @apply bg-background text-foreground;
+  .theme-forest {
+    --color-brand-primary: 120 60% 30%;     // Forest Green
+    --color-brand-secondary: 80 70% 45%;    // Olive
+    --color-brand-tertiary: 40 80% 50%;     // Yellow-Green
+    --color-brand-quaternary: 30 90% 55%;   // Orange
   }
-}
+
+  .theme-sunset {
+    --color-brand-primary: 340 80% 50%;     // Pink
+    --color-brand-secondary: 15 90% 55%;    // Orange
+    --color-brand-tertiary: 45 100% 50%;    // Yellow
+    --color-brand-quaternary: 0 80% 55%;    // Red
+  }
+*/

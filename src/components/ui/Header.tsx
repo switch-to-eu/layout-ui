@@ -14,6 +14,7 @@ export interface HeaderBrandProps {
   href?: string;
   className?: string;
   onClick?: () => void;
+  icon?: React.ReactNode;
 }
 
 export interface HeaderNavProps {
@@ -32,7 +33,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
     <header
       ref={ref}
       className={cn(
-        "border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60",
+        "max-w bg-background/95 supports-[backdrop-filter]:bg-background/60 backdrop-blur border-b border-primary/10",
         sticky && "sticky top-0 z-50",
         className
       )}
@@ -59,17 +60,26 @@ const HeaderContent = React.forwardRef<HTMLDivElement, HeaderContentProps>(
 HeaderContent.displayName = "HeaderContent";
 
 const HeaderBrand = React.forwardRef<HTMLDivElement, HeaderBrandProps>(
-  ({ children, href, className, onClick }, ref) => {
+  ({ children, href, className, onClick, icon }, ref) => {
     const brandContent = (
       <div
         ref={ref}
         className={cn(
-          "flex cursor-pointer items-center gap-2 text-lg font-semibold transition-opacity hover:opacity-80 sm:text-xl",
+          "flex text-primary cursor-pointer items-center gap-2 text-lg font-black transition-opacity hover:opacity-80 sm:text-xl",
           className
         )}
         onClick={onClick}
       >
-        {children}
+        {icon && (
+          <div className="relative text-primary h-3 w-3  flexitems-center justify-center rounded-sm bg-purple-600">
+            <div className="h-3 w-3 text-primary">
+              {icon}
+            </div>
+          </div>
+        )}
+        <span className="font-black tracking-wide uppercase">
+          {children}
+        </span>
       </div>
     );
 

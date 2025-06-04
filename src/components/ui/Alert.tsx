@@ -4,13 +4,17 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 
 const alertVariants = cva(
-  "relative w-full rounded-lg border p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground",
+  "relative w-full p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground overflow-hidden shadow-card",
   {
     variants: {
       variant: {
-        default: "bg-background text-foreground",
-        destructive:
-          "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive",
+        default: "bg-background text-foreground border-t border-b border-primary sm:rounded-lg sm:border-l sm:border-r",
+        destructive: "gradient-bg-destructive border-t border-b border-primary sm:rounded-lg sm:border-l sm:border-r text-gray-900 [&>svg]:text-warning",
+        primary: "gradient-bg-primary border-t border-b border-primary sm:rounded-lg sm:border-l sm:border-r text-gray-900",
+        secondary: "gradient-bg-secondary border-t border-b border-primary sm:rounded-lg sm:border-l sm:border-r text-gray-900",
+        tertiary: "gradient-bg-tertiary border-t border-b border-primary sm:rounded-lg sm:border-l sm:border-r text-gray-900",
+        quaternary: "gradient-bg-quaternary border-t border-b border-primary sm:rounded-lg sm:border-l sm:border-r text-gray-900",
+        neutral: "bg-gray-50 border-t border-b border-primary sm:rounded-lg sm:border-l sm:border-r text-gray-900",
       },
     },
     defaultVariants: {
