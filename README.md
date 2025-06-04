@@ -1,4 +1,4 @@
-# @swicth-to-eu/layout-ui
+# @switch-to-eu/layout-ui
 
 A modular UI design system for privacy-focused tools, built with React, TypeScript, and Tailwind CSS.
 
@@ -14,14 +14,14 @@ A modular UI design system for privacy-focused tools, built with React, TypeScri
 ## Installation
 
 ```bash
-npm install @swicth-to-eu/layout-ui
+npm install @switch-to-eu/layout-ui
 ```
 
 ## Usage
 
 ```tsx
-import { Button, Card } from "@swicth-to-eu/layout-ui";
-import "@swicth-to-eu/layout-ui/styles";
+import { Button, Card } from "@switch-to-eu/layout-ui";
+import "@switch-to-eu/layout-ui/styles";
 
 function App() {
   return (

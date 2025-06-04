@@ -1,14 +1,20 @@
 import { defineConfig } from "tsup";
+import buildConfig from "./build.config";
 
 export default defineConfig({
     entry: ["src/index.ts"],
-    format: ["cjs", "esm"],
+    format: [...buildConfig.formats],
     dts: true,
     splitting: false,
-    sourcemap: true,
+    sourcemap: buildConfig.sourcemap,
     clean: true,
-    external: ["react", "react-dom", "next"],
+    treeshake: buildConfig.treeshake,
+    external: [...buildConfig.external],
+    target: buildConfig.target,
     banner: {
         js: '"use client";',
+    },
+    esbuildOptions(options) {
+        options.conditions = ["module"];
     },
 });

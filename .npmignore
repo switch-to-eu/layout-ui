@@ -1,0 +1,42 @@
+# Source files
+src/
+stories/
+.storybook/
+docs/
+
+# Configuration files
+tsconfig.json
+tsup.config.ts
+build.config.ts
+tailwind.config.ts
+postcss.config.js
+.eslintrc.js
+.eslintrc.json
+
+# Development files
+*.log
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+storybook-static/
+node_modules/
+.git/
+.gitignore
+.npmignore
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test files
+__tests__/
+*.test.*
+*.spec.*
+
+# Documentation (except README)
+docs/

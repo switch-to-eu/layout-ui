@@ -12,12 +12,17 @@
   "scripts": {
     "build": "tsup",
     "build:watch": "tsup --watch",
-    "dev": "tsup --watch",
+    "build:analyze": "tsup --metafile",
+    "dev": "tsup --watch --sourcemap",
+    "dev:clean": "npm run clean && npm run dev",
+    "clean": "rimraf dist",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "react": "^19.0.0",
@@ -51,6 +56,7 @@
     "@types/react-dom": "^19.0.0",
     "eslint": "^9.23.0",
     "postcss": "^8.5.3",
+    "rimraf": "^5.0.0",
     "storybook": "^8.0.0",
     "tailwindcss": "^4.0.15",
     "tsup": "^8.0.0",
@@ -66,7 +72,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/swicth-to-eu/layout-ui.git"
+    "url": "git+https://github.com/switch-to-eu/layout-ui.git"
   },
   "keywords": [
     "ui",
