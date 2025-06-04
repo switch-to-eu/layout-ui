@@ -1,13 +1,15 @@
 {
   "name": "@switch-to-eu/layout-ui",
   "version": "0.1.0",
-  "description": "Modular UI design system for privacy-focused tools",
+  "description": "Modular UI design system for privacy-focused tools - React components with Tailwind CSS and theme customization",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "build": "tsup",
@@ -22,7 +24,12 @@
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "type-check": "tsc --noEmit",
     "type-check:watch": "tsc --noEmit --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build && npm run type-check",
+    "publish:dry": "npm publish --dry-run",
+    "publish:beta": "npm publish --tag beta",
+    "version:patch": "npm version patch",
+    "version:minor": "npm version minor",
+    "version:major": "npm version major"
   },
   "peerDependencies": {
     "next": "^15.2.3",
@@ -77,11 +84,28 @@
     "ui",
     "components",
     "react",
+    "nextjs",
     "tailwind",
-    "design-system"
+    "tailwindcss",
+    "design-system",
+    "privacy",
+    "modular",
+    "theme",
+    "customization",
+    "typescript",
+    "radix-ui",
+    "form-components"
   ],
-  "author": "Vincent Peters",
+  "author": {
+    "name": "Vincent Peters",
+    "email": "vincent@switch-to.eu",
+    "url": "https://switch-to.eu"
+  },
   "license": "MIT",
+  "homepage": "https://github.com/switch-to-eu/layout-ui#readme",
+  "bugs": {
+    "url": "https://github.com/switch-to-eu/layout-ui/issues"
+  },
   "eslintConfig": {
     "extends": [
       "plugin:storybook/recommended",

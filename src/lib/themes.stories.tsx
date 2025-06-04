@@ -71,7 +71,7 @@ export const ThemeShowcase: Story = {
           <div className="flex flex-wrap gap-2">
             <Button>Default</Button>
             <Button variant="secondary">Secondary</Button>
-            <Button variant="outline">Outline</Button>
+            <Button variant="neutral">Outline</Button>
             <Button variant="ghost">Ghost</Button>
             <Button variant="destructive">Destructive</Button>
             <Button variant="link">Link</Button>
@@ -119,7 +119,7 @@ export const ThemeShowcase: Story = {
                 <p className="text-sm">Great for low-light conditions and extended use.</p>
               </CardContent>
               <CardFooter>
-                <Button size="sm" variant="outline">Try It</Button>
+                <Button size="sm" variant="neutral">Try It</Button>
               </CardFooter>
             </Card>
           </div>

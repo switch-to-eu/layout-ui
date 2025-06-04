@@ -245,7 +245,7 @@ function App() {
           <Button className="bg-gradient-purple-blue">
             Browse Components
           </Button>
-          <Button variant="outline">
+          <Button variant="neutral">
             View Theme Showcase
           </Button>
         </div>
@@ -354,7 +354,7 @@ export const ThemeShowcase: Story = {
               <div className="space-y-6">
                 <div className="flex flex-wrap gap-4">
                   <Button className="bg-gradient-purple-blue">Primary</Button>
-                  <Button variant="outline">Outline</Button>
+                  <Button variant="neutral">Outline</Button>
                   <Button variant="secondary">Secondary</Button>
                   <Button variant="ghost">Ghost</Button>
                   <Button variant="destructive">Destructive</Button>
@@ -455,7 +455,7 @@ export const ThemeShowcase: Story = {
                     <p className="text-sm text-muted-foreground mb-4">
                       A simple card with header and content area.
                     </p>
-                    <Button variant="outline" size="sm">Learn More</Button>
+                    <Button variant="neutral" size="sm">Learn More</Button>
                   </CardContent>
                 </Card>
 
@@ -463,7 +463,7 @@ export const ThemeShowcase: Story = {
                   <CardHeader>
                     <CardTitle>Card with Action</CardTitle>
                     <CardAction>
-                      <Button variant="outline" size="sm">Edit</Button>
+                      <Button variant="neutral" size="sm">Edit</Button>
                     </CardAction>
                   </CardHeader>
                   <CardContent>
@@ -606,7 +606,7 @@ export const ThemeShowcase: Story = {
             <Button size="lg" className="bg-gradient-purple-blue">
               View All Components
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="neutral" size="lg">
               Read Documentation
             </Button>
             <Button variant="secondary" size="lg">

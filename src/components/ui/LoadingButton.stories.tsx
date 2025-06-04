@@ -65,7 +65,7 @@ export const Variants: Story = {
     <div className="flex flex-wrap gap-4">
       <LoadingButton loading>Default</LoadingButton>
       <LoadingButton variant="destructive" loading>Destructive</LoadingButton>
-      <LoadingButton variant="outline" loading>Outline</LoadingButton>
+      <LoadingButton variant="neutral" loading>Outline</LoadingButton>
       <LoadingButton variant="secondary" loading>Secondary</LoadingButton>
       <LoadingButton variant="ghost" loading>Ghost</LoadingButton>
     </div>

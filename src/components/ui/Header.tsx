@@ -33,7 +33,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
     <header
       ref={ref}
       className={cn(
-        "max-w bg-background/95 supports-[backdrop-filter]:bg-background/60 backdrop-blur border-b border-primary/10",
+        "max-w bg-background/95 supports-[backdrop-filter]:bg-background/60 backdrop-blur border-b border-primary",
         sticky && "sticky top-0 z-50",
         className
       )}
