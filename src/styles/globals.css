@@ -111,6 +111,12 @@
     --color-brand-tertiary: 142.1 76.2% 36.3%;
     --color-brand-quaternary: 20.5 90.2% 48.2%;
 
+    /* Map brand colors to standard variables that components expect */
+    --color-primary: var(--color-brand-primary);
+    --color-secondary: var(--color-brand-secondary);
+    --color-tertiary: var(--color-brand-tertiary);
+    --color-quaternary: var(--color-brand-quaternary);
+
     /* Semantic Color Variables - Fixed colors for universal meaning */
     --color-success: 142.1 76.2% 36.3%;
     --color-warning: 45.4 93.4% 47.5%;
@@ -119,20 +125,20 @@
     --color-info: 217.2 91.2% 59.8%;
 
     /* Gradient Variables */
-    --gradient-primary-start: var(--color-brand-primary);
-    --gradient-primary-end: var(--color-brand-secondary);
+    --gradient-primary-start: var(--color-primary);
+    --gradient-primary-end: var(--color-secondary);
     --gradient-secondary-start: var(--color-warning);
     --gradient-secondary-end: var(--color-error);
     --gradient-tertiary-start: var(--color-success);
-    --gradient-tertiary-end: var(--color-brand-secondary);
+    --gradient-tertiary-end: var(--color-secondary);
     --gradient-quaternary-start: var(--color-success);
     --gradient-quaternary-end: var(--color-warning);
     --gradient-quinary-start: 326.8 78% 66%;
-    --gradient-quinary-end: var(--color-brand-primary);
+    --gradient-quinary-end: var(--color-primary);
 
     /* Background Gradient Variables */
-    --gradient-bg-primary-start: var(--color-brand-primary);
-    --gradient-bg-primary-end: var(--color-brand-secondary);
+    --gradient-bg-primary-start: var(--color-primary);
+    --gradient-bg-primary-end: var(--color-secondary);
     --gradient-bg-secondary-start: 0 0% 100%;
     --gradient-bg-secondary-end: var(--color-warning);
     --gradient-bg-tertiary-start: 0 0% 100%;
@@ -141,7 +147,7 @@
     --gradient-bg-quaternary-end: var(--color-warning);
 
     /* Shadow Variables */
-    --shadow-color-primary: var(--color-brand-primary);
+    --shadow-color-primary: var(--color-primary);
     --shadow-color-secondary: 220 13% 91%;
   }
 
@@ -192,24 +198,24 @@
   }
 
   .text-primary {
-    color: hsl(var(--color-brand-primary));
+    color: hsl(var(--color-primary));
   }
 
   /* Layout UI Background Utilities */
   .bg-primary {
-    background-color: hsl(var(--color-brand-primary));
+    background-color: hsl(var(--color-primary));
   }
 
   .bg-secondary {
-    background-color: hsl(var(--color-brand-secondary));
+    background-color: hsl(var(--color-secondary));
   }
 
   .bg-tertiary {
-    background-color: hsl(var(--color-brand-tertiary));
+    background-color: hsl(var(--color-tertiary));
   }
 
   .bg-quaternary {
-    background-color: hsl(var(--color-brand-quaternary));
+    background-color: hsl(var(--color-quaternary));
   }
 
   .bg-success {
@@ -352,11 +358,11 @@
 
   /* Layout UI Border Utilities */
   .border-primary {
-    border-color: hsl(var(--color-border));
+    border-color: hsl(var(--color-primary));
   }
 
   .border-secondary {
-    border-color: hsl(var(--color-brand-secondary));
+    border-color: hsl(var(--color-secondary));
   }
 
   .border-input {
