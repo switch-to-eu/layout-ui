@@ -1,6 +1,6 @@
 {
   "name": "@switch-to-eu/layout-ui",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Modular UI design system for privacy-focused tools - React components with Tailwind CSS and theme customization",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
