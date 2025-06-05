@@ -39,7 +39,19 @@ npm install react@^19.0.0 react-dom@^19.0.0 next@^15.2.3
 Import the base styles in your project (usually in `globals.css` or `layout.tsx`):
 
 ```css
+/* Option 1: Import main styles (includes globals.css) */
 @import "@switch-to-eu/layout-ui/styles";
+
+/* Option 2: Import specific style files */
+@import "@switch-to-eu/layout-ui/styles/globals.css";
+@import "@switch-to-eu/layout-ui/styles/themes.css";
+```
+
+Or in your TypeScript/JavaScript files:
+
+```tsx
+// In your root layout or App component
+import "@switch-to-eu/layout-ui/styles/globals.css";
 ```
 
 ### 2. Use Components

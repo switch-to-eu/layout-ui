@@ -12,7 +12,7 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "rimraf dist && tsc --project tsconfig.build.json && tsup",
     "build:watch": "tsup --watch",
     "build:analyze": "tsup --metafile",
     "dev": "tsup --watch --sourcemap",
@@ -74,7 +74,9 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
-    "./styles": "./dist/styles.css"
+    "./styles/globals.css": "./dist/globals.css",
+    "./styles/themes.css": "./dist/themes.css",
+    "./styles": "./dist/globals.css"
   },
   "repository": {
     "type": "git",
